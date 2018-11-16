@@ -41,7 +41,7 @@ public class TrelloClient {
                 .queryParam("token", trelloConfig.getTrelloAppToken())
                 .queryParam("fields", "name,id")
                 .queryParam("lists", "all").build().encode().toUri();
-
+;
         try {
             TrelloBoardDto[] boardsResponse = restTemplate.getForObject(url, TrelloBoardDto[].class);
             return Optional.ofNullable(boardsResponse)
