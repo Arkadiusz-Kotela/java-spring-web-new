@@ -34,7 +34,7 @@ public class MailCreatorService {
         context.setVariable("company_goal", detailsConfig.getGoal() );
         context.setVariable("company_email", detailsConfig.getEmail() );
         context.setVariable("company_phone", detailsConfig.getPhone() );
-
         return templateEngine.process("mail/created-trello-card-mail", context);
     }
+
 }

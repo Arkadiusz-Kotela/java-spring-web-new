@@ -5,19 +5,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Map;
 
-//@Controller
-//public class StaticWebPageController {
-//
-//    @RequestMapping("/")
-//    public String index(Map<String, Object> model) {
-//        model.put("variable", "My Thymeleaf variable");
-////        model.put("one", 1);
-//        model.put("two", 2);
-//        model.put("firstVar", "2 * 2 = ");
-//        model.put("secondVar", "2 * 2 + 2 = ");
-//        model.put("thirdVar", "2 - 2 * 2 = ");
-//        model.put("calc1", 2*2+2);
-//        model.put("calc2", 2-2*2);
-//        return "index";
-//    }
-//}
+@Controller
+public class StaticWebPageController {
+
+    @RequestMapping("/")
+    public String index(Map<String, Object> model) {
+        model.put("variable", "My Thymeleaf variable");
+//        model.put("one", 1);
+        model.put("two", 2);
+        model.put("firstVar", "2 * 2 = ");
+        model.put("secondVar", "2 * 2 + 2 = ");
+        model.put("thirdVar", "2 - 2 * 2 = ");
+        model.put("calc1", 2*2+2);
+        model.put("calc2", 2-2*2);
+        return "index";
+    }
+}

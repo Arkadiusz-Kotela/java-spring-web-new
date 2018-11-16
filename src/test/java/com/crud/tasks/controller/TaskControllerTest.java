@@ -1,11 +1,9 @@
 package com.crud.tasks.controller;
 
-import com.crud.tasks.domain.Task;
 import com.crud.tasks.domain.TaskDto;
 import com.google.gson.Gson;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentMatchers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -44,7 +42,7 @@ public class TaskControllerTest {
         when(taskController.getTasks()).thenReturn(taskList);
 
         //When & Then
-        mockMvc.perform((get("/v1/task/getTasks").contentType(MediaType.APPLICATION_JSON)))
+        mockMvc.perform((get("/v1/tasks").contentType(MediaType.APPLICATION_JSON)))
                 .andExpect(status().is(200))
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].id", is(1)))
@@ -67,7 +65,7 @@ public class TaskControllerTest {
         String jsonContent = gson.toJson(newTaskDto);
 
         //When & Then
-        mockMvc.perform(post("/v1/task/createTask").contentType(MediaType.APPLICATION_JSON)
+        mockMvc.perform(post("/v1/tasks").contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContent))
                 .andExpect(status().is(200));
